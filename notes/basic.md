@@ -12,3 +12,32 @@
 - @Ignore
 
 ## Exception testing
+- @Test(expected=Exception.class)
+    - if we set the expected field equal to an exception class, the test will
+    only pass if an exception of that type is thrown.
+
+```
+    @Test(expected = InvalidGoalException.class) 
+    public void testThrowException() throws InvalidGoalException {
+        classUnderTest.setGoal(-1);
+    }
+```
+
+## Timing out @Test(timeout=100)
+- Test network connection.
+- Make the test to fail if it takes too long and blocks other tests
+
+```
+    @Test(timeout=100)
+```
+
+## Assertions
+- assertArrayEquals
+- assertEquals
+- assertTrue
+- assertFalse
+- assertNull
+- assertNotNull
+- assertSame
+- assertNotSame
+- fail
