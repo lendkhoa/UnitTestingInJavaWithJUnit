@@ -41,3 +41,12 @@
 - assertSame
 - assertNotSame
 - fail
+
+## Test Suites
+- Run a selected test classes together
+- Eclipse will use the **Suite.class** runner that is built 
+into the IDE to run.
+
+## Category
+- In JUnit we can add @Category to any test class or test method
+- Inheritance does apply to category -> can apply hierarchies
