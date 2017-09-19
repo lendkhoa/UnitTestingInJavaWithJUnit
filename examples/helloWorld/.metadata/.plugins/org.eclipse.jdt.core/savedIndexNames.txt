@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+C:\Users\KL052362\Documents\UlearnEnrolled\UnitTestingInJavaWithJUnit\examples\helloWorld\.metadata\.plugins\org.eclipse.jdt.core
