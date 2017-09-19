@@ -46,7 +46,30 @@
 - Run a selected test classes together
 - Eclipse will use the **Suite.class** runner that is built 
 into the IDE to run.
+- use @IncludeCategory to include test class
+- use @ExcludeCategory to exclude test class
+
+```
+    import org.junit.runners.Suite;
+    import org.junit.runner.RunWith;
+
+    @IncludeCategory(className.class)
+    @ExcludeCategory(className.class)
+    @RunWith(Suite.class)
+    @Suite.SuiteClasses({LibraryTest.class})
+
+    public class TestSuite {
+        
+    }
+```
 
 ## Category
 - In JUnit we can add @Category to any test class or test method
 - Inheritance does apply to category -> can apply hierarchies
+- Create a category in Eclipse is by creating an interface
+    - Then use the interface at the @Category
+    ```
+        @Category(interfaceName.class)
+    ```
+
+## Parameterized Tests
