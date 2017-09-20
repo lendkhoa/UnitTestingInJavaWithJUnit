@@ -48,3 +48,13 @@ assertThat(lib.addNumber(input), allOf(is(expected), instanceOf(Integer.class)))
 public Timeout timeout = Timeout.millis(1);
 
 ```
+
+## Theory
+
+```
+public void positiveValues (int val) {
+    // if val < 0 it will skip that input
+    Assume.assumeTrue(val > 0);
+    assertTrue(action() > 0);
+}
+```
