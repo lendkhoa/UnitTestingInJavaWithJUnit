@@ -1,4 +1,4 @@
-# Unit testing in java with JUnit
+# JUnit: Basic
 > Kansas city, Sep 19, 2017
 
 - Packaged as a single jar file
@@ -73,3 +73,45 @@ into the IDE to run.
     ```
 
 ## Parameterized Tests
+- Repetitive tasks that only vary in the expected input and output.
+- To past a set of input and expected output to test class.
+- Need static method, with a parameters annotation that returns 
+a collection of arrays that have one item for an input and one 
+item for an expected result.
+
+```
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class ParameterizedTests {
+	
+	@Parameters
+	public static List<Object[]> data() {
+		return Arrays.asList(new Object[][]{
+		 	// input and expected output	
+			{5, 5}
+		});
+	}
+
+    private static int input;
+    private static int expected;
+    public ParameterizedTests(int input, int expected) {
+        this.input = input;
+        this.expected = expected;
+    }
+
+    @Test
+    public void test() {
+        if (input >= 0)
+            //do stuff
+        else
+            // do other stuff
+        
+        assertEquals(expected, actualAction());
+    }
+
+}
+
+```
